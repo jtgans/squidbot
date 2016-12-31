@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: squidbot-v4
+  labels:
+    version: v4
+spec:
+  replicas: 1
+  selector:
+    version: v4
+  template:
+    metadata:
+      labels:
+        version: v4
+    spec:
+      containers:
+        - name: squidbot
+          image: jtgans/squidbot:v4
+          env:
+            - name: HUBOT_FLOWDOCK_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: flowdock-api-token
+                  key: token
+          resources:
+            limits:
+              cpu: 100m
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+      restartPolicy: Always
