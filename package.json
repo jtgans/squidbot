@@ -8,7 +8,7 @@
     "hubot": "^2.19.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-fliptable": "^1.2.0",
-    "hubot-flowdock": ">= 0.0.1",
+    "squidbot-flowdock": ">= 0.0.1",
     "hubot-has-no-idea": "^1.2.0",
     "hubot-help": "^0.2.0",
     "hubot-maps": "0.0.2",
